@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 
     // X_VAL: What is the value of x?
     // Put the response in line 4 of the file
-    if (strcmp(X_VAL, X_VAL_ANS) == 0) {
+    if (X_VAL == X_VAL_ANS) {
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
         std::cout << "X_VAL is correct!" << std::endl;
         std::cout << x << std::endl;

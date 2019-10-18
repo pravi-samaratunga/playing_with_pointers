@@ -16,7 +16,7 @@ TARGETS := $(foreach x, $(PROJECTS), $(EXEC_DIR)$(x).o)
 
 00_basic_pointers:
 	@mkdir -p $(EXEC_DIR)
-	$(CXX) $(CXXFLAGS) -DY_STAR_ANS=$(shell echo "\061\060") -DZ_VAL_ANS=$(shell echo "\\\"\\\"") -DCHAR_STAR_Y_ANS=$(shell echo "\\\"\136\165\055\\\"") -DX_VAL_ANS=2979166 -o $(EXEC_DIR)$@.o $(SRC_DIR)$@.cpp $(LDFLAGS)
+	@$(CXX) $(CXXFLAGS) -DY_STAR_ANS=$(shell echo "\061\060") -DZ_VAL_ANS=$(shell echo "\\\"\\\"") -DCHAR_STAR_Y_ANS=$(shell echo "\\\"\136\165\055\\\"") -DX_VAL_ANS=2979166 -o $(EXEC_DIR)$@.o $(SRC_DIR)$@.cpp $(LDFLAGS)
 	@$(EXEC_DIR)$@.o $(shell echo "$(PROJECTS)")
 
 #$(TARGETS) : $(EXEC_DIR)%.o : $(SRC_DIR)%.cpp
