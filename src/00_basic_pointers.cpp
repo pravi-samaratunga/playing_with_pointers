@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
         points++;
     }
 
-    // CHAR_STAR_Y_VAL: What is the value of y?
+    // CHAR_STAR_Y: What is the value of y?
     // Put the response in line 3 of the file
     if (strcmp(CHAR_STAR_Y, CHAR_STAR_Y_ANS) == 0) {
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
