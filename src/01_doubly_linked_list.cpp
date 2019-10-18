@@ -1,8 +1,39 @@
+#define QUESTION_1_RESPONSE 0
+#define QUESTION_2_RESPONSE 0
+#define QUESTION_3_RESPONSE 0
+#define DLL_P_VAL "Blue"
+
 #undef BREAK_THINGS
+//#define BREAK_THINGS
+
+// This file is a little bit different than the previous one.
+// This is an implementation of a doubly linked list. You've probably seen something like it before.
+// Here's a reference in english: https://www.tutorialspoint.com/data_structures_algorithms/linked_list_algorithms.htm
+
+// Multiple choice quiz:
+
+// Question 1: What does the pointer p in the DoublyLinkedList class represent?
+// (1) A pointer to the ll_node object at the beginning of the DoublyLinkedList.
+// (2) A pointer to an ll_node object somewhere in the DoublyLinkedList.
+// (3) A pointer to the DoublyLinkedList class itself.
+
+// Question 2: What does the ++ operator do here?
+// (1) Increments the value of pointer p to the next byte.
+// (2) Makes p point to the next node in the list.
+// (3) Adds 1 to the value of the DoublyLinkedList object.
+
+// Question 3: What does line 127 (end->next = start;) do? Uncomment line 7 to learn more.
+// (1) Sets the initial pointer to refer to itself, so the beginning of the list is unreachable.
+// (2) Creates a circular bidirectional linked list, so the last element of the list refers to the first one and vice versa.
+// (3) Creates a circular linked list going forward, but a terminating linked list going backwards.
+
+// Run `make 01_doubly_linked_list` to compile and run this program.
 
 #include <iterator>
 #include <string.h>
 #include <iostream>
+
+int points = INITIAL_POINTS;
 
 struct ll_node
 {
@@ -100,11 +131,23 @@ int main(int argc, char const *argv[])
     {
         std::cout << d.p->value << std::endl;
     }
+
+    // DLL_P_VAL: What is the value of dll.p->value (without color codes)?
+    // The answer is "Red", "Yellow", "Green", "Blue", or "Purple"
+    // Put the answer in line 4 of this file.
+    if (DLL_P_VAL == DLL_P_VAL_ANS) {
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+        std::cout << "DLL_P_VAL is correct!" << std::endl;
+        std::cout << dll.p->value << std::endl;
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+        points++;
+    }
     dll.to_end();
     for (DoublyLinkedList d(dll); d.p->prev != nullptr; --d)
     {
         std::cout << d.p->value << std::endl;
     }
 
+    std::cout << "You got " << points << " points out of 4." << std::endl;
     return 0;
 }
