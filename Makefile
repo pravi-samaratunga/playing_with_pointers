@@ -22,7 +22,12 @@ TARGETS := $(foreach x, $(PROJECTS), $(EXEC_DIR)$(x).o)
 01_doubly_linked_list:
 	@mkdir -p $(EXEC_DIR)
 	$(CXX) $(CXXFLAGS) -DDLL_P_VAL_ANS=$(shell echo "\\\"\122\145\144\\\"") -DINITIAL_POINTS="(QUESTION_1_RESPONSE == $(shell echo "\064*\064/\070")) + (QUESTION_2_RESPONSE == $(shell echo "\063*\061-\061")) + (QUESTION_3_RESPONSE == $(shell echo "\066-\063"))" -o $(EXEC_DIR)$@.o $(SRC_DIR)$@.cpp $(LDFLAGS)
-	@$(EXEC_DIR)$@.o $(shell echo "$(PROJECTS)");
+	@$(EXEC_DIR)$@.o $(shell echo "$(PROJECTS)")
+
+02_new_keyword:
+	@mkdir -p $(EXEC_DIR)
+	$(CXX) $(CXXFLAGS) -o $(EXEC_DIR)$@.o $(SRC_DIR)$@.cpp $(LDFLAGS)
+	@$(EXEC_DIR)$@.o
 
 #$(TARGETS) : $(EXEC_DIR)%.o : $(SRC_DIR)%.cpp
 #	mkdir -p $(EXEC_DIR)
